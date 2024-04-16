@@ -60,3 +60,6 @@ local_*.ipynb
 
 test_db_dump.sql
 coverage_files/*
+
+# Ignore asdf
+.tool-versions
