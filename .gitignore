@@ -60,5 +60,3 @@ local_*.ipynb
 
 test_db_dump.sql
 coverage_files/*
-
-docker-compose.yml
