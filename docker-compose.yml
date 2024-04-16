@@ -21,6 +21,7 @@ services:
       - DJANGO_SETTINGS_MODULE=take_home.settings
       - DJANGO_LOG_LEVEL=DEBUG
       - ENV=local
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - POSTGRES_NAME=emotive
       - POSTGRES_USER=emotive
       - POSTGRES_PASS=emotive
