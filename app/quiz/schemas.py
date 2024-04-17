@@ -1,6 +1,6 @@
 from ninja import Schema, ModelSchema
 from .models import Question
-
+from typing import Literal
 
 class QuestionOut(ModelSchema):
     class Meta:
@@ -10,7 +10,7 @@ class QuestionOut(ModelSchema):
 
 class AnswerIn(Schema):
     question_uuid: str
-    answer: str
+    answer: Literal['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd']
 
 
 class AnswerOut(Schema):
