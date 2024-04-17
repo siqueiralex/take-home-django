@@ -15,7 +15,7 @@ def get_question(request: WSGIRequest, category: QuestionCategory = 'random'):
     
     try:
         question = question_generator.generate_question(category=category)
-    except:
+    except Exception as e:
         return 500, {'message': "Sorry. We're currently unable to generate a question for you."}
     
     return question
@@ -25,7 +25,10 @@ def get_question(request: WSGIRequest, category: QuestionCategory = 'random'):
 def answer(request: WSGIRequest, answer: AnswerIn):
     try:
         question = Question.objects.get(uuid=answer.question_uuid)
-    except:
+    except Exception as e:
         return 404, {'message': f"Sorry. We couldn't find a question with the uuid {answer.question_uuid}."}
     
-    return { 'correct' : question.check_answer(answer=answer.answer) }
+    return { 
+        'answered_correctly' : question.check_answer(answer=answer.answer),
+        'correct_answer' : question.answer
+    }

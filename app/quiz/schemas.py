@@ -14,7 +14,8 @@ class AnswerIn(Schema):
 
 
 class AnswerOut(Schema):
-    correct: bool
+    answered_correctly: bool
+    correct_answer: str
 
 
 class ErrorSchema(Schema):
