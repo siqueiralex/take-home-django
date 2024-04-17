@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from take_home import views
+from quiz.views import api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pets/', views.list_pets),
+    path('api/', api.urls),
 ]
