@@ -6,7 +6,7 @@ from .schemas import AnswerIn, AnswerOut, QuestionOut, ErrorSchema
 from .questions import QuestionCategory, GPTQuestionGenerator, QuestionGenerator
 
 
-api = NinjaAPI()
+api = NinjaAPI(title='AI Quiz API')
 
 
 @api.get("/question", response={200: QuestionOut, 500: ErrorSchema})
