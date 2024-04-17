@@ -49,30 +49,30 @@ Users can request questions tailored to their preferences, and the API utilizes 
 - **Query Parameter**: 
   - `category`: Accepts values 'geography', 'science', and 'random'. Default is 'random'.
 - **Response JSON Format**:
-  ```json
-  {
-      "uuid": "uuid of question",
-      "question": "the proper question statement with options inside it",
-      "category": "the chosen category"
-  }
-  ```
+    ```json
+    {
+        "uuid": "uuid of question",
+        "question": "the proper question statement with options inside it",
+        "category": "the chosen category"
+    }
+    ```
 
 
 ### 2. `/api/answer` (POST)
 - **Description**: Used to submit a response to a known question.
 - **Request JSON Format**:
-  ```json
-  {
-    "question_uuid": "the uuid of the question",
-    "answer": "the answer of the user that will be A, B, C, or D"
-  }
-  ```
+    ```json
+    {
+        "question_uuid": "the uuid of the question",
+        "answer": "the answer of the user that will be A, B, C, or D"
+    }
+    ```
 - **Response JSON Format**:
     ```json
-  {
-    "answered_correctly": "if you responded correctly",
-    "correct_answer": "the correct answer to the question"
-  }
+    {
+        "answered_correctly": "if you responded correctly",
+        "correct_answer": "the correct answer to the question"
+    }
     ```
 
 
